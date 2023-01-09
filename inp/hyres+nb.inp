@@ -1,0 +1,57 @@
+* short equilibrium simulation of the cg structure 
+*
+
+if @?pdbid eq 0 stop
+if @?segid eq 0 set segid = @pdbid
+if @?run eq 0 stop
+
+set toppar = required
+
+!!! for HyRes/SASA 
+read  rtf card name top-idpcg-sasa.inp
+read para card name param-idpcg-sasa-nb.inp
+
+open read card unit 10 name @pdbid.hr.psf
+read psf  card unit 10
+clos unit 10
+
+open read card unit 15 name @pdbid.hr.pdb
+read coor pdb  unit 15 resi
+clos unit 15
+
+coor copy comp
+
+
+! ionc 0.01: for DH screening
+NBOND atom switch cdie vdw vswitch -
+      cutnb 20.0 ctofnb 18.0 ctonnb 16.0 -
+      eps 20 ionc 0
+
+nbond inbfrq -1
+!hbond ihbfrq -1
+energy
+stop
+shake tolerance 1.0e-06 bonh param
+
+
+! dynamics
+scalar FBETA set 0.2 select .not. hydrogen end
+
+open writ card unit 9  name @pdbid.@run.rest
+open writ file unit 10 name @pdbid.@run.dcd
+
+
+
+set nstep = 50000 ! 0.01 ns
+
+! 400 ns sim
+DYNAMICS LEAP start timestep 0.002 nstep @nstep -
+     inbfrq -1 imgfrq -1 ihbfrq 0 -
+     iunread -11 iunwri 9 iuncrd 10 kunit -1 iunvel -1 -
+     nprint 100 iprfrq 100 nsavc 100 nsavv 0 isvfrq @nstep 
+
+open writ card unit 11 name @pdbid.@run.pdb
+coor writ pdb  unit 11
+clos unit 11
+
+stop

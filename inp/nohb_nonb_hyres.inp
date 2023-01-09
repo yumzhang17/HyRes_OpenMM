@@ -1,0 +1,74 @@
+* short equilibrium simulation of the cg structure 
+*
+
+if @?pdbid eq 0 stop
+if @?segid eq 0 set segid = @pdbid
+if @?run eq 0 stop
+
+set toppar = required
+
+!!! for HyRes/SASA 
+read  rtf card name top-idpcg-sasa.inp
+read para card name param-idpcg-sasa.inp
+
+open read card unit 10 name @pdbid.hr.psf
+read psf  card unit 10
+clos unit 10
+
+open read card unit 15 name @pdbid.hr.pdb
+read coor pdb  unit 15 resi
+clos unit 15
+
+coor copy comp
+
+!define bb      sele type N .or. type NH1 .or. type C .or. type O .or. type C1E .or. type C2E .or. type C3E .or. type CT show end
+!define donor   sele type N .or. type NH1 .or. type O show end
+!define acceptor sele type C .or. type C1E .or. type C2E .or. type C3E .or. type CT show end
+
+!! SASA model build up
+
+!nbond nbxmod 5 atom rdiel shift vatom vdistance vshift -
+!      cutnb 8.0 ctofnb 7.5 ctonnb 6.5 eps 2.0 e14fac 0.4 wmin 1.5
+
+!sasa  sele  type N S014 -0.01 .or. type NH1 S017 -0.01 .or. type O S021 -0.01 .or. acceptor show end 
+
+
+
+! ionc 0.01: for DH screening
+!NBOND atom switch cdie vdw vswitch -
+!      cutnb 20.0 ctofnb 18.0 ctonnb 16.0 -
+!      eps 20 ionc 0.15
+
+!nbond inbfrq -1
+!hbond ihbfrq -1
+energy
+
+shake tolerance 1.0e-06 bonh param
+
+
+! to prevent peptide from drifting away
+!mmfp
+!   geo sphere rcm force 1.0 droff 0.0 xref 0.0 yref 0.0 zref 0.0 -
+!       select all end
+!end
+
+
+! dynamics
+scalar FBETA set 0.2 select .not. hydrogen end
+
+open writ card unit 9  name @pdbid.@run.rest
+open writ file unit 10 name @pdbid.@run.dcd
+
+set nstep = 50000 ! 0.01 ns
+
+! 400 ns sim
+DYNAMICS LEAP start timestep 0.002 nstep @nstep -
+     inbfrq -1 imgfrq -1 ihbfrq 0 -
+     iunread -11 iunwri 9 iuncrd 10 kunit -1 iunvel -1 -
+     nprint 100 iprfrq 100 nsavc 100 nsavv 0 isvfrq @nstep 
+
+open writ card unit 11 name @pdbid.@run.pdb
+coor writ pdb  unit 11
+clos unit 11
+
+stop

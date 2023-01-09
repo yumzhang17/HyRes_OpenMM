@@ -1,0 +1,301 @@
+ Processing passed argument "pdbid=aaqaa"
+ Parameter: pdbid <- "aaqaa"
+ Processing passed argument "run=0"
+ Parameter: run <- "0"
+1
+                 Chemistry at HARvard Macromolecular Mechanics
+                   (CHARMM) - Developmental Version 35b2   February 15, 2008   
+       Copyright(c) 1984-2001  President and Fellows of Harvard College
+                              All Rights Reserved
+      Current operating system: Linux-3.10.0-862.14.4.el7.x86_64(x86_64)@bla
+                 Created on 12/19/22 at 11:26:23 by user: yumzhang    
+
+            Maximum number of ATOMS:     60120, and RESidues:       20040
+            Current HEAP size:        10240000, and STACK size:  10000000
+
+ Processing passed argument "pdbid=aaqaa"
+ Parameter: PDBID <- "AAQAA"
+ Processing passed argument "run=0"
+ Parameter: RUN <- "0"
+ RDTITL> * SHORT EQUILIBRIUM SIMULATION OF THE CG STRUCTURE
+ RDTITL> *
+  
+ CHARMM>     
+  
+ CHARMM>    if @?pdbid eq 0 stop
+ Comparing "1" and "0".
+ IF test evaluated as false.  Skipping command
+  
+ CHARMM>    if @?segid eq 0 set segid = @pdbid
+ Parameter: PDBID -> "AAQAA"
+ Comparing "0" and "0".
+ IF test evaluated as true.  Performing command
+ Parameter: SEGID <- "AAQAA"
+  
+ CHARMM>    if @?run eq 0 stop
+ Comparing "1" and "0".
+ IF test evaluated as false.  Skipping command
+  
+ CHARMM>     
+  
+ CHARMM>    set toppar = required
+ Parameter: TOPPAR <- "REQUIRED"
+  
+ CHARMM>     
+  
+ CHARMM>    !!! for HyRes/SASA
+ CHARMM>    read  rtf card name top-idpcg-sasa.inp
+ VOPEN> Attempting to open::top-idpcg-sasa.inp::
+ MAINIO> Residue topology file being read from unit  90.
+ TITLE> * TOPOLOGY FILE FOR COARSE GRAINED PROTEINS
+ TITLE> * ARG, LYS, ASP, GLU ARE CHARGED
+ TITLE> *
+ VCLOSE: Closing unit   90 with status "KEEP"
+  
+ CHARMM>    read para card name param-idpcg-sasa.inp
+ VOPEN> Attempting to open::param-idpcg-sasa.inp::
+
+          PARAMETER FILE BEING READ FROM UNIT 90
+ TITLE> * PARAMETER FILE FOR COARSE GRAINED PROTEINS
+ TITLE> * ARG, LYS, ASP, GLU IS NEUTRAL
+ TITLE> *
+ PARRDR> ERROR: Repeated torsion periodicity: INDEX   50 CODE******** PERIODICITY  1     NH1 -C1E -A1Y -A2Y 
+ PARRDR> ERROR: Repeated torsion periodicity: INDEX   42 CODE******** PERIODICITY  1     NH1 -C1E -A1F -A2F 
+ PARRDR> ERROR: Repeated torsion periodicity: INDEX   34 CODE******** PERIODICITY  1     NH1 -C1E -A4H -P1H 
+*****  WARNING  ***** PARRDR no nonbond parameters for atom type:  10  CT  
+ NO nonbond interactions will be computed for this atom type.
+ PARMIO> NONBOND, HBOND lists and IMAGE atoms cleared.
+ VCLOSE: Closing unit   90 with status "KEEP"
+  
+ CHARMM>     
+  
+ CHARMM>    open read card unit 10 name @pdbid.hr.psf
+ Parameter: PDBID -> "AAQAA"
+ VOPEN> Attempting to open::aaqaa.hr.psf::
+ OPNLGU> Unit 10 opened for READONLY access to aaqaa.hr.psf
+  
+ CHARMM>    read psf  card unit 10
+ MAINIO> Protein structure file being read from unit  10.
+ TITLE>  * PSF OF AAQAA FOR CG SYSTEM
+ TITLE>  *  DATE:     8/20/21     18:36:17      CREATED BY USER: yumzhang
+ TITLE>  *
+ PSFSUM> PSF modified: NONBOND lists and IMAGE atoms cleared.
+ PSFSUM> Summary of the structure file counters :
+         Number of segments      =        1   Number of residues   =       17
+         Number of atoms         =       96   Number of groups     =       48
+         Number of bonds         =       95   Number of angles     =      141
+         Number of dihedrals     =      184   Number of impropers  =       47
+         Number of cross-terms   =       15
+         Number of HB acceptors  =       16   Number of HB donors  =       16
+         Number of NB exclusions =        0   Total charge =    0.00000
+  
+ CHARMM>    clos unit 10
+ VCLOSE: Closing unit   10 with status "KEEP"
+  
+ CHARMM>     
+  
+ CHARMM>    open read card unit 15 name @pdbid.hr.pdb
+ Parameter: PDBID -> "AAQAA"
+ VOPEN> Attempting to open::aaqaa.hr.pdb::
+ OPNLGU> Unit 15 opened for READONLY access to aaqaa.hr.pdb
+  
+ CHARMM>    read coor pdb  unit 15 resi
+  read CHARMM-pdb format
+          SPATIAL COORDINATES BEING READ FROM UNIT 15
+ TITLE>   SHORT EQUILIBRIUM SIMULATION OF THE CG STRUCTURE
+ TITLE>    DATE:     8/22/21      1:25:26      CREATED BY USER: YUMZHANG
+ TITLE>  *
+  
+ CHARMM>    clos unit 15
+ VCLOSE: Closing unit   15 with status "KEEP"
+  
+ CHARMM>     
+  
+ CHARMM>    coor copy comp
+ SELECTED COORDINATES COPIED TO THE COMPARISON SET.
+
+  
+ CHARMM>     
+  
+ CHARMM>     
+  
+ CHARMM>    ! ionc 0.01: for DH screening
+ CHARMM>    !NBOND atom switch cdie vdw vswitch -
+ CHARMM>    !      cutnb 20.0 ctofnb 18.0 ctonnb 16.0 -
+ CHARMM>    !      eps 20 ionc 0.15
+ CHARMM>     
+  
+ CHARMM>    !nbond inbfrq -1
+ CHARMM>    !hbond ihbfrq -1
+ CHARMM>    energy
+
+ NONBOND OPTION FLAGS: 
+     ELEC     VDW      ATOMs    CDIElec  SWITch   VATOm    VSWItch 
+     BYGRoup  NOEXtnd  NOEWald 
+ CUTNB  = 16.000 CTEXNB =999.000 CTONNB = 11.000 CTOFNB = 15.000
+ WMIN   =  1.500 WRNMXD =  0.500 E14FAC =  0.400 EPS    =  1.000
+ NBXMOD =      5 IONC   = 0.0000
+ There are        0 atom  pairs and        0 atom  exclusions.
+ There are        0 group pairs and        0 group exclusions.
+ <MAKINB> with mode   5 found    236 exclusions and    184 interactions(1-4)
+ <MAKGRP> found    123 group exclusions.
+ Generating nonbond list with Exclusion mode = 5
+ == PRIMARY == SPACE FOR     4513 ATOM PAIRS AND        0 GROUP PAIRS
+
+ General atom nonbond list generation found:
+     3674 ATOM PAIRS WERE FOUND FOR ATOM LIST
+       72 GROUP PAIRS REQUIRED ATOM SEARCHES
+
+ENER ENR:  Eval#     ENERgy      Delta-E         GRMS
+ENER INTERN:          BONDs       ANGLes       UREY-b    DIHEdrals    IMPRopers
+ENER CROSS:           CMAPs     
+ENER EXTERN:        VDWaals         ELEC       HBONds          ASP         USER
+ ----------       ---------    ---------    ---------    ---------    ---------
+ENER>        0     56.72568      0.00000     22.23190
+ENER INTERN>       27.75298     30.39591      0.00000      5.16849      9.73077
+ENER CROSS>        -6.85256
+ENER EXTERN>       -9.46991      0.00000      0.00000      0.00000      0.00000
+ ----------       ---------    ---------    ---------    ---------    ---------
+  
+ CHARMM>     
+  
+ CHARMM>    COOR FORCE COMP  ! copy forces to the comparison coordinates
+ SELECTED FORCES COPIED TO THE COMPARISON SET.
+
+  
+ CHARMM>    COOR DIST WEIGH COMP  ! put magnitudes in the weighting array.
+  
+ CHARMM>    PRINT COOR COMP
+
+          COORDINATE FILE MODULE
+ TITLE>  * SHORT EQUILIBRIUM SIMULATION OF THE CG STRUCTURE
+ TITLE>  *
+   96
+    1    1 AMN  CL    -7.49179   0.63752   2.07821 AAQA 1      7.80079
+    2    1 AMN  C     46.00816 -10.72505   4.78080 AAQA 1     47.48298
+    3    1 AMN  O    -30.99681  14.99082  -6.38554 AAQA 1     35.01860
+    4    2 ALA  N    -20.80960 -28.46935  -3.78770 AAQA 2     35.46675
+    5    2 ALA  H     -4.22694  -0.50910  -2.43237 AAQA 2      4.90333
+    6    2 ALA  CA    53.23210  42.57401  -6.24039 AAQA 2     68.44812
+    7    2 ALA  CB   -32.31609   2.77522  -5.99667 AAQA 2     32.98472
+    8    2 ALA  C    -23.43239 -23.60897  -7.62743 AAQA 2     34.12679
+    9    2 ALA  O      4.08679   7.31696   9.72874 AAQA 2     12.84088
+   10    3 ALA  N     35.34143 -23.99549  44.30137 AAQA 3     61.54195
+   11    3 ALA  H     -3.92842   1.43307   6.99637 AAQA 3      8.15079
+   12    3 ALA  CA   -19.22215  44.64441 -14.03915 AAQA 3     50.59359
+   13    3 ALA  CB   -12.10595   5.49115 -13.58426 AAQA 3     19.00629
+   14    3 ALA  C     12.75781 -51.54091 -13.05895 AAQA 3     54.67873
+   15    3 ALA  O     14.31141   6.18480   0.39045 AAQA 3     15.59553
+   16    4 GLN  N    -35.15154  12.27056  10.64842 AAQA 4     38.72449
+   17    4 GLN  H     11.02659  -0.57338  -4.53530 AAQA 4     11.93664
+   18    4 GLN  CA    32.07865  27.97849  -5.45282 AAQA 4     42.91351
+   19    4 GLN  CB   -11.91016 -13.62589   0.52507 AAQA 4     18.10504
+   20    4 GLN  C      1.65244  -6.08749  34.55279 AAQA 4     35.12383
+   21    4 GLN  O      6.55795 -12.03788  -4.40057 AAQA 4     14.39731
+   22    5 ALA  N    -19.84152  38.00106 -12.23272 AAQA 5     44.58033
+   23    5 ALA  H     -2.43891  -1.74149  -4.25490 AAQA 5      5.20435
+   24    5 ALA  CA    19.08324 -37.41636  17.81404 AAQA 5     45.62339
+   25    5 ALA  CB   -11.86982  18.60600 -33.59357 AAQA 5     40.19457
+   26    5 ALA  C     44.41192 -14.44164  -1.19139 AAQA 5     46.71615
+   27    5 ALA  O     -9.32832   3.61703  -1.24780 AAQA 5     10.08253
+   28    6 ALA  N    -34.39490 -23.63087   5.90251 AAQA 6     42.14578
+   29    6 ALA  H     -3.08326  -0.60513   7.19907 AAQA 6      7.85489
+   30    6 ALA  CA     4.81099  33.61107   6.20993 AAQA 6     34.51685
+   31    6 ALA  CB     2.11173  -2.07186   1.42007 AAQA 6      3.28155
+   32    6 ALA  C      2.55102 -27.47618  -4.09318 AAQA 6     27.89628
+   33    6 ALA  O     11.90608  25.64097   2.25008 AAQA 6     28.35977
+   34    7 ALA  N     -5.61027  -6.14422  26.03449 AAQA 7     27.33169
+   35    7 ALA  H     11.50679   2.79445  -3.76814 AAQA 7     12.42634
+   36    7 ALA  CA     4.69537   2.14614 -10.20551 AAQA 7     11.43700
+   37    7 ALA  CB   -17.92429 -12.42054 -21.54194 AAQA 7     30.65298
+   38    7 ALA  C      7.38278  65.23108 -61.07086 AAQA 7     89.66186
+   39    7 ALA  O      7.71488 -38.50157  22.23671 AAQA 7     45.12606
+   40    8 ALA  N    -10.07772 -20.77792  44.44533 AAQA 8     50.08662
+   41    8 ALA  H      3.68052  -2.01612  -8.32183 AAQA 8      9.32008
+   42    8 ALA  CA     2.71311  26.65036 -12.02980 AAQA 8     29.36527
+   43    8 ALA  CB   -27.02632 -15.19862  22.51094 AAQA 8     38.31661
+   44    8 ALA  C      3.42298   6.70230  -6.25974 AAQA 8      9.78887
+   45    8 ALA  O     -9.70111   1.38156  -1.01725 AAQA 8      9.85165
+   46    9 GLN  N      5.66314 -21.17704   2.92079 AAQA 9     22.11491
+   47    9 GLN  H     -2.23906  -0.77583   0.46275 AAQA 9      2.41443
+   48    9 GLN  CA    45.55805 -11.35064  15.76124 AAQA 9     49.52564
+   49    9 GLN  CB   -24.77811   4.90985 -20.71455 AAQA 9     32.66732
+   50    9 GLN  C    -19.85779 -32.43251  -4.41524 AAQA 9     38.28438
+   51    9 GLN  O     11.96239   6.66074 -20.65605 AAQA 9     24.78179
+   52   10 ALA  N    -16.84760  74.83908  -7.83112 AAQA 10    77.11068
+   53   10 ALA  H      0.21647   0.17076   5.97794 AAQA 10     5.98430
+   54   10 ALA  CA   -26.93647 -24.22121  21.08943 AAQA 10    41.91664
+   55   10 ALA  CB    13.86979  -2.85442 -13.85910 AAQA 10    19.81397
+   56   10 ALA  C     37.00772   4.51220  13.93259 AAQA 10    39.80010
+   57   10 ALA  O     -0.96569   0.14539   3.03650 AAQA 10     3.18968
+   58   11 ALA  N     -3.91249 -10.38767 -10.49921 AAQA 11    15.27890
+   59   11 ALA  H    -13.04797  -0.74898  -0.48121 AAQA 11    13.07830
+   60   11 ALA  CA    -7.40320  -9.54322  11.50116 AAQA 11    16.67804
+   61   11 ALA  CB    13.18344  10.77012  -1.54602 AAQA 11    17.09353
+   62   11 ALA  C    -18.70911  14.53714   6.67518 AAQA 11    24.61539
+   63   11 ALA  O     15.98557 -23.98214   8.98926 AAQA 11    30.19086
+   64   12 ALA  N     14.60259 -26.45623 -36.51415 AAQA 12    47.39674
+   65   12 ALA  H     -4.31681   2.74065   6.44799 AAQA 12     8.22938
+   66   12 ALA  CA     4.47776  62.22268   3.62846 AAQA 12    62.48902
+   67   12 ALA  CB    -4.55326 -18.23468  30.75115 AAQA 12    36.03983
+   68   12 ALA  C      3.96623 -29.48547 -32.29691 AAQA 12    43.91144
+   69   12 ALA  O    -22.59340  23.84312  19.51783 AAQA 12    38.20866
+   70   13 ALA  N    -27.16342 -56.69519   6.81216 AAQA 13    63.23449
+   71   13 ALA  H     -4.66415  -1.04103   7.02374 AAQA 13     8.49535
+   72   13 ALA  CA    61.04228  27.67146 -51.55919 AAQA 13    84.55897
+   73   13 ALA  CB   -31.14425  18.07677  -1.91185 AAQA 13    36.06091
+   74   13 ALA  C      2.80140 -21.66622  26.89180 AAQA 13    34.64740
+   75   13 ALA  O     -0.50364   0.90969 -12.80074 AAQA 13    12.84290
+   76   14 GLN  N      4.25412  30.08375  30.57987 AAQA 14    43.10752
+   77   14 GLN  H      5.32999   1.72765   3.29097 AAQA 14     6.49800
+   78   14 GLN  CA    16.80205 -22.05102   5.78416 AAQA 14    28.31983
+   79   14 GLN  CB    -1.31811  -0.87188 -11.09330 AAQA 14    11.20531
+   80   14 GLN  C    -63.80283  81.89964 -52.67123 AAQA 14   116.41569
+   81   14 GLN  O     25.81594 -55.53660  37.72596 AAQA 14    71.93070
+   82   15 ALA  N     43.60941 -24.77425   6.24081 AAQA 15    50.54198
+   83   15 ALA  H    -17.27620  -1.56478   3.73142 AAQA 15    17.74371
+   84   15 ALA  CA    -3.97175  49.40982  12.00698 AAQA 15    51.00267
+   85   15 ALA  CB     3.05335 -15.00298   3.42621 AAQA 15    15.68921
+   86   15 ALA  C    -53.61949  -0.97569 -64.22791 AAQA 15    83.67333
+   87   15 ALA  O      6.96611  11.92254  17.68398 AAQA 15    22.43651
+   88   16 ALA  N     31.60419 -30.84018  36.41424 AAQA 16    57.23581
+   89   16 ALA  H      0.42657  -0.57169  -0.52299 AAQA 16     0.88448
+   90   16 ALA  CA    15.48936  20.43368 -12.81831 AAQA 16    28.66644
+   91   16 ALA  CB     2.11882  -3.97952  11.35755 AAQA 16    12.21965
+   92   16 ALA  C     18.34193  10.67407  15.52645 AAQA 16    26.29511
+   93   16 ALA  O    -23.43368 -16.29122  -3.21027 AAQA 16    28.72015
+   94   17 CBX  N     -0.79779 -20.28801 -32.98975 AAQA 17    38.73711
+   95   17 CBX  H     -3.25407  -0.06882   5.51582 AAQA 17     6.40453
+   96   17 CBX  CA     2.80524   8.64525  10.25913 AAQA 17    13.70618
+  
+ CHARMM>     
+  
+ CHARMM>     
+  
+ CHARMM>    stop
+$$$$$$  New timer profile $$$$$
+   List time                       0.00 Other:            0.00
+         Electrostatic & VDW             0.00 Other:            0.00
+      Nonbond force                   0.00 Other:            0.00
+         Bond energy                     0.00 Other:            0.00
+         Angle energy                    0.00 Other:            0.00
+         Dihedral energy                 0.00 Other:            0.00
+         Restraints energy               0.00 Other:            0.00
+      INTRNL energy                   0.00 Other:            0.00
+   Energy time                     0.00 Other:            0.00
+ Total time                      0.04 Other:            0.04
+
+                    NORMAL TERMINATION BY NORMAL STOP
+                    MAXIMUM STACK SPACE USED IS   47520
+                    STACK CURRENTLY IN USE IS         0
+                    NO WARNINGS WERE ISSUED
+                    HEAP PRINTOUT-  HEAP SIZE  10240000
+                    SPACE CURRENTLY IN USE IS      9216
+                    MAXIMUM SPACE USED IS         19356
+                    FREE LIST
+            PRINHP> ADDRESS:         1 LENGTH:  10230244 NEXT:  10239461
+            PRINHP> ADDRESS:  10239461 LENGTH:       540 NEXT:         0
+
+                    $$$$$ JOB ACCOUNTING INFORMATION $$$$$
+                     ELAPSED TIME:     0.04  SECONDS 
+                         CPU TIME:     0.04  SECONDS 

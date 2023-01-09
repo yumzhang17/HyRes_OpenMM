@@ -1,0 +1,455 @@
+ Processing passed argument "pdbid=aaqaa"
+ Parameter: pdbid <- "aaqaa"
+ Processing passed argument "run=0"
+ Parameter: run <- "0"
+1
+                 Chemistry at HARvard Macromolecular Mechanics
+                   (CHARMM) - Developmental Version 35b2   February 15, 2008   
+       Copyright(c) 1984-2001  President and Fellows of Harvard College
+                              All Rights Reserved
+      Current operating system: Linux-3.10.0-862.14.4.el7.x86_64(x86_64)@bla
+                 Created on 12/19/22 at 11:32: 5 by user: yumzhang    
+
+            Maximum number of ATOMS:     60120, and RESidues:       20040
+            Current HEAP size:        10240000, and STACK size:  10000000
+
+ Processing passed argument "pdbid=aaqaa"
+ Parameter: PDBID <- "AAQAA"
+ Processing passed argument "run=0"
+ Parameter: RUN <- "0"
+ RDTITL> * SHORT EQUILIBRIUM SIMULATION OF THE CG STRUCTURE
+ RDTITL> *
+  
+ CHARMM>     
+  
+ CHARMM>    if @?pdbid eq 0 stop
+ Comparing "1" and "0".
+ IF test evaluated as false.  Skipping command
+  
+ CHARMM>    if @?segid eq 0 set segid = @pdbid
+ Parameter: PDBID -> "AAQAA"
+ Comparing "0" and "0".
+ IF test evaluated as true.  Performing command
+ Parameter: SEGID <- "AAQAA"
+  
+ CHARMM>    if @?run eq 0 stop
+ Comparing "1" and "0".
+ IF test evaluated as false.  Skipping command
+  
+ CHARMM>     
+  
+ CHARMM>    set toppar = required
+ Parameter: TOPPAR <- "REQUIRED"
+  
+ CHARMM>     
+  
+ CHARMM>    !!! for HyRes/SASA
+ CHARMM>    read  rtf card name top-idpcg-sasa.inp
+ VOPEN> Attempting to open::top-idpcg-sasa.inp::
+ MAINIO> Residue topology file being read from unit  90.
+ TITLE> * TOPOLOGY FILE FOR COARSE GRAINED PROTEINS
+ TITLE> * ARG, LYS, ASP, GLU ARE CHARGED
+ TITLE> *
+ VCLOSE: Closing unit   90 with status "KEEP"
+  
+ CHARMM>    read para card name param-idpcg-sasa.inp
+ VOPEN> Attempting to open::param-idpcg-sasa.inp::
+
+          PARAMETER FILE BEING READ FROM UNIT 90
+ TITLE> * PARAMETER FILE FOR COARSE GRAINED PROTEINS
+ TITLE> * ARG, LYS, ASP, GLU IS NEUTRAL
+ TITLE> *
+ WARNING from DECODI -- Zero length string being converted to 0
+ PARRDR> WARNING: ATOMS IN PHI1 (CMAP) H    0.00 -0.0 0.22  DONT EXIST
+ WARNING from DECODI -- Zero length string being converted to 0
+ PARRDR> WARNING: ATOMS IN PHI1 (CMAP) C    0.00 -0.0 2.10  DONT EXIST
+ WARNING from DECODI -- Zero length string being converted to 0
+ PARRDR> WARNING: ATOMS IN PHI1 (CMAP) C1E  0.00 -0.0 2.36  DONT EXIST
+ WARNING from DECODI -- Zero length string being converted to 0
+ PARRDR> WARNING: ATOMS IN PHI1 (CMAP) C2E  0.00 -0.0 2.23  DONT EXIST
+ WARNING from DECODI -- Zero length string being converted to 0
+ PARRDR> WARNING: ATOMS IN PHI1 (CMAP) N*   0.00 -0.0 1.60  DONT EXIST
+ WARNING from DECODI -- Zero length string being converted to 0
+ PARRDR> WARNING: ATOMS IN PHI1 (CMAP) O    0.00 -0.0 1.60  DONT EXIST
+ WARNING from DECODI -- Zero length string being converted to 0
+ PARRDR> WARNING: ATOMS IN PHI1 (CMAP) C3E  0.00 -0.3 2.11  DONT EXIST
+ WARNING from DECODI -- Zero length string being converted to 0
+ PARRDR> WARNING: ATOMS IN PHI1 (CMAP) A2V  0.00 -0.6 2.75  DONT EXIST
+ WARNING from DECODI -- Zero length string being converted to 0
+ PARRDR> WARNING: ATOMS IN PHI1 (CMAP) A1L  0.00 -0.9 2.95  DONT EXIST
+ WARNING from DECODI -- Zero length string being converted to 0
+ PARRDR> WARNING: ATOMS IN PHI1 (CMAP) A1I  0.00 -0.7 2.97  DONT EXIST
+ WARNING from DECODI -- Zero length string being converted to 0
+ PARRDR> WARNING: ATOMS IN PHI1 (CMAP) A5M  0.00 -0.6 2.98  DONT EXIST
+ WARNING from DECODI -- Zero length string being converted to 0
+ PARRDR> WARNING: ATOMS IN PHI1 (CMAP) P5N  0.00 -0.1 2.65  DONT EXIST
+ WARNING from DECODI -- Zero length string being converted to 0
+ PARRDR> WARNING: ATOMS IN PHI1 (CMAP) QAD  0.00 -0.1 2.60  DONT EXIST
+ WARNING from DECODI -- Zero length string being converted to 0
+ PARRDR> WARNING: ATOMS IN PHI1 (CMAP) P4Q  0.00 -0.2 2.89  DONT EXIST
+ WARNING from DECODI -- Zero length string being converted to 0
+ PARRDR> WARNING: ATOMS IN PHI1 (CMAP) QAE  0.00 -0.1 2.85  DONT EXIST
+ WARNING from DECODI -- Zero length string being converted to 0
+ PARRDR> WARNING: ATOMS IN PHI1 (CMAP) P1C  0.00 -0.5 2.46  DONT EXIST
+ WARNING from DECODI -- Zero length string being converted to 0
+ PARRDR> WARNING: ATOMS IN PHI1 (CMAP) P1S  0.00 -0.1 2.32  DONT EXIST
+ WARNING from DECODI -- Zero length string being converted to 0
+ PARRDR> WARNING: ATOMS IN PHI1 (CMAP) P1T  0.00 -0.2 2.62  DONT EXIST
+ WARNING from DECODI -- Zero length string being converted to 0
+ PARRDR> WARNING: ATOMS IN PHI1 (CMAP) A2P  0.00 -0.2 2.76  DONT EXIST
+ WARNING from DECODI -- Zero length string being converted to 0
+ PARRDR> WARNING: ATOMS IN PHI1 (CMAP) A3K  0.00 -0.0 2.77  DONT EXIST
+ WARNING from DECODI -- Zero length string being converted to 0
+ PARRDR> WARNING: ATOMS IN PHI1 (CMAP) QDK  0.00 -0.0 2.35  DONT EXIST
+ WARNING from DECODI -- Zero length string being converted to 0
+ PARRDR> WARNING: ATOMS IN PHI1 (CMAP) A3R  0.00 -0.1 2.77  DONT EXIST
+ WARNING from DECODI -- Zero length string being converted to 0
+ PARRDR> WARNING: ATOMS IN PHI1 (CMAP) QDR  0.00 -0.1 2.53  DONT EXIST
+ WARNING from DECODI -- Zero length string being converted to 0
+ PARRDR> WARNING: ATOMS IN PHI1 (CMAP) A4H  0.00 -0.1 2.34  DONT EXIST
+ WARNING from DECODI -- Zero length string being converted to 0
+ PARRDR> WARNING: ATOMS IN PHI1 (CMAP) P1H  0.00 -0.0 2.18  DONT EXIST
+ WARNING from DECODI -- Zero length string being converted to 0
+ PARRDR> WARNING: ATOMS IN PHI1 (CMAP) P2H  0.00 -0.0 2.10  DONT EXIST
+ WARNING from DECODI -- Zero length string being converted to 0
+ PARRDR> WARNING: ATOMS IN PHI1 (CMAP) A1F  0.00 -0.2 2.64  DONT EXIST
+ WARNING from DECODI -- Zero length string being converted to 0
+ PARRDR> WARNING: ATOMS IN PHI1 (CMAP) A2F  0.00 -0.2 2.32  DONT EXIST
+ WARNING from DECODI -- Zero length string being converted to 0
+ PARRDR> WARNING: ATOMS IN PHI1 (CMAP) A3F  0.00 -0.2 2.32  DONT EXIST
+ WARNING from DECODI -- Zero length string being converted to 0
+ PARRDR> WARNING: ATOMS IN PHI1 (CMAP) A1Y  0.00 -0.1 2.64  DONT EXIST
+ WARNING from DECODI -- Zero length string being converted to 0
+ PARRDR> WARNING: ATOMS IN PHI1 (CMAP) A2Y  0.00 -0.1 2.32  DONT EXIST
+ WARNING from DECODI -- Zero length string being converted to 0
+ PARRDR> WARNING: ATOMS IN PHI1 (CMAP) P1Y  0.00 -0.0 2.45  DONT EXIST
+ WARNING from DECODI -- Zero length string being converted to 0
+ PARRDR> WARNING: ATOMS IN PHI1 (CMAP) A1W  0.00 -0.1 2.42  DONT EXIST
+ WARNING from DECODI -- Zero length string being converted to 0
+ PARRDR> WARNING: ATOMS IN PHI1 (CMAP) P1W  0.00 -0.0 2.23  DONT EXIST
+ WARNING from DECODI -- Zero length string being converted to 0
+ PARRDR> WARNING: ATOMS IN PHI1 (CMAP) A2W  0.00 -0.1 2.08  DONT EXIST
+ WARNING from DECODI -- Zero length string being converted to 0
+ PARRDR> WARNING: ATOMS IN PHI1 (CMAP) A3W  0.00 -0.1 2.32  DONT EXIST
+ WARNING from DECODI -- Zero length string being converted to 0
+ PARRDR> WARNING: ATOMS IN PHI1 (CMAP) A4W  0.00 -0.1 2.32  DONT EXIST
+ PARRDR> ERROR: Repeated torsion periodicity: INDEX   50 CODE******** PERIODICITY  1     NH1 -C1E -A1Y -A2Y 
+ PARRDR> ERROR: Repeated torsion periodicity: INDEX   42 CODE******** PERIODICITY  1     NH1 -C1E -A1F -A2F 
+ PARRDR> ERROR: Repeated torsion periodicity: INDEX   34 CODE******** PERIODICITY  1     NH1 -C1E -A4H -P1H 
+*****  WARNING  ***** PARRDR no nonbond parameters for atom type:   1  H   
+ NO nonbond interactions will be computed for this atom type.
+*****  WARNING  ***** PARRDR no nonbond parameters for atom type:  10  CT  
+ NO nonbond interactions will be computed for this atom type.
+*****  WARNING  ***** PARRDR no nonbond parameters for atom type:  11  C   
+ NO nonbond interactions will be computed for this atom type.
+*****  WARNING  ***** PARRDR no nonbond parameters for atom type:  12  C1E 
+ NO nonbond interactions will be computed for this atom type.
+*****  WARNING  ***** PARRDR no nonbond parameters for atom type:  13  C2E 
+ NO nonbond interactions will be computed for this atom type.
+*****  WARNING  ***** PARRDR no nonbond parameters for atom type:  14  C3E 
+ NO nonbond interactions will be computed for this atom type.
+*****  WARNING  ***** PARRDR no nonbond parameters for atom type:  31  N   
+ NO nonbond interactions will be computed for this atom type.
+*****  WARNING  ***** PARRDR no nonbond parameters for atom type:  38  NH1 
+ NO nonbond interactions will be computed for this atom type.
+*****  WARNING  ***** PARRDR no nonbond parameters for atom type:  51  O   
+ NO nonbond interactions will be computed for this atom type.
+*****  WARNING  ***** PARRDR no nonbond parameters for atom type: 209  A2V 
+ NO nonbond interactions will be computed for this atom type.
+*****  WARNING  ***** PARRDR no nonbond parameters for atom type: 210  A1L 
+ NO nonbond interactions will be computed for this atom type.
+*****  WARNING  ***** PARRDR no nonbond parameters for atom type: 211  A1I 
+ NO nonbond interactions will be computed for this atom type.
+*****  WARNING  ***** PARRDR no nonbond parameters for atom type: 212  A5M 
+ NO nonbond interactions will be computed for this atom type.
+*****  WARNING  ***** PARRDR no nonbond parameters for atom type: 213  P5N 
+ NO nonbond interactions will be computed for this atom type.
+*****  WARNING  ***** PARRDR no nonbond parameters for atom type: 214  QAD 
+ NO nonbond interactions will be computed for this atom type.
+*****  WARNING  ***** PARRDR no nonbond parameters for atom type: 215  P4Q 
+ NO nonbond interactions will be computed for this atom type.
+*****  WARNING  ***** PARRDR no nonbond parameters for atom type: 216  QAE 
+ NO nonbond interactions will be computed for this atom type.
+*****  WARNING  ***** PARRDR no nonbond parameters for atom type: 217  P1C 
+ NO nonbond interactions will be computed for this atom type.
+*****  WARNING  ***** PARRDR no nonbond parameters for atom type: 218  P1S 
+ NO nonbond interactions will be computed for this atom type.
+*****  WARNING  ***** PARRDR no nonbond parameters for atom type: 219  P1T 
+ NO nonbond interactions will be computed for this atom type.
+*****  WARNING  ***** PARRDR no nonbond parameters for atom type: 220  A2P 
+ NO nonbond interactions will be computed for this atom type.
+*****  WARNING  ***** PARRDR no nonbond parameters for atom type: 221  A3K 
+ NO nonbond interactions will be computed for this atom type.
+*****  WARNING  ***** PARRDR no nonbond parameters for atom type: 222  QDK 
+ NO nonbond interactions will be computed for this atom type.
+*****  WARNING  ***** PARRDR no nonbond parameters for atom type: 223  A3R 
+ NO nonbond interactions will be computed for this atom type.
+*****  WARNING  ***** PARRDR no nonbond parameters for atom type: 224  QDR 
+ NO nonbond interactions will be computed for this atom type.
+*****  WARNING  ***** PARRDR no nonbond parameters for atom type: 225  A4H 
+ NO nonbond interactions will be computed for this atom type.
+*****  WARNING  ***** PARRDR no nonbond parameters for atom type: 226  P1H 
+ NO nonbond interactions will be computed for this atom type.
+*****  WARNING  ***** PARRDR no nonbond parameters for atom type: 227  P2H 
+ NO nonbond interactions will be computed for this atom type.
+*****  WARNING  ***** PARRDR no nonbond parameters for atom type: 228  A1F 
+ NO nonbond interactions will be computed for this atom type.
+*****  WARNING  ***** PARRDR no nonbond parameters for atom type: 229  A2F 
+ NO nonbond interactions will be computed for this atom type.
+*****  WARNING  ***** PARRDR no nonbond parameters for atom type: 230  A3F 
+ NO nonbond interactions will be computed for this atom type.
+*****  WARNING  ***** PARRDR no nonbond parameters for atom type: 231  A1Y 
+ NO nonbond interactions will be computed for this atom type.
+*****  WARNING  ***** PARRDR no nonbond parameters for atom type: 232  A2Y 
+ NO nonbond interactions will be computed for this atom type.
+*****  WARNING  ***** PARRDR no nonbond parameters for atom type: 233  P1Y 
+ NO nonbond interactions will be computed for this atom type.
+*****  WARNING  ***** PARRDR no nonbond parameters for atom type: 234  A1W 
+ NO nonbond interactions will be computed for this atom type.
+*****  WARNING  ***** PARRDR no nonbond parameters for atom type: 235  P1W 
+ NO nonbond interactions will be computed for this atom type.
+*****  WARNING  ***** PARRDR no nonbond parameters for atom type: 236  A2W 
+ NO nonbond interactions will be computed for this atom type.
+*****  WARNING  ***** PARRDR no nonbond parameters for atom type: 237  A3W 
+ NO nonbond interactions will be computed for this atom type.
+*****  WARNING  ***** PARRDR no nonbond parameters for atom type: 238  A4W 
+ NO nonbond interactions will be computed for this atom type.
+ PARMIO> NONBOND, HBOND lists and IMAGE atoms cleared.
+ VCLOSE: Closing unit   90 with status "KEEP"
+  
+ CHARMM>     
+  
+ CHARMM>    open read card unit 10 name @pdbid.hr.psf
+ Parameter: PDBID -> "AAQAA"
+ VOPEN> Attempting to open::aaqaa.hr.psf::
+ OPNLGU> Unit 10 opened for READONLY access to aaqaa.hr.psf
+  
+ CHARMM>    read psf  card unit 10
+ MAINIO> Protein structure file being read from unit  10.
+ TITLE>  * PSF OF AAQAA FOR CG SYSTEM
+ TITLE>  *  DATE:     8/20/21     18:36:17      CREATED BY USER: yumzhang
+ TITLE>  *
+ PSFSUM> PSF modified: NONBOND lists and IMAGE atoms cleared.
+ PSFSUM> Summary of the structure file counters :
+         Number of segments      =        1   Number of residues   =       17
+         Number of atoms         =       96   Number of groups     =       48
+         Number of bonds         =       95   Number of angles     =      141
+         Number of dihedrals     =      184   Number of impropers  =       47
+         Number of cross-terms   =       15
+         Number of HB acceptors  =       16   Number of HB donors  =       16
+         Number of NB exclusions =        0   Total charge =    0.00000
+  
+ CHARMM>    clos unit 10
+ VCLOSE: Closing unit   10 with status "KEEP"
+  
+ CHARMM>     
+  
+ CHARMM>    open read card unit 15 name @pdbid.hr.pdb
+ Parameter: PDBID -> "AAQAA"
+ VOPEN> Attempting to open::aaqaa.hr.pdb::
+ OPNLGU> Unit 15 opened for READONLY access to aaqaa.hr.pdb
+  
+ CHARMM>    read coor pdb  unit 15 resi
+  read CHARMM-pdb format
+          SPATIAL COORDINATES BEING READ FROM UNIT 15
+ TITLE>   SHORT EQUILIBRIUM SIMULATION OF THE CG STRUCTURE
+ TITLE>    DATE:     8/22/21      1:25:26      CREATED BY USER: YUMZHANG
+ TITLE>  *
+  
+ CHARMM>    clos unit 15
+ VCLOSE: Closing unit   15 with status "KEEP"
+  
+ CHARMM>     
+  
+ CHARMM>    coor copy comp
+ SELECTED COORDINATES COPIED TO THE COMPARISON SET.
+
+  
+ CHARMM>     
+  
+ CHARMM>     
+  
+ CHARMM>    !!ionc 0.01: for DH screening
+ CHARMM>    !NBOND atom switch cdie vdw vswitch -
+ CHARMM>    !      cutnb 20.0 ctofnb 18.0 ctonnb 16.0 -
+ CHARMM>    !      eps 20 ionc 0.15
+ CHARMM>     
+  
+ CHARMM>    !nbond inbfrq -1
+ CHARMM>    !hbond ihbfrq -1
+ CHARMM>    energy
+
+ NONBOND OPTION FLAGS: 
+     ELEC     VDW      ATOMs    RDIElec  SWITch   VATOm    VSWItch 
+     BYGRoup  NOEXtnd  NOEWald 
+ CUTNB  =  8.000 CTEXNB =999.000 CTONNB =  6.500 CTOFNB =  7.500
+ WMIN   =  1.500 WRNMXD =  0.500 E14FAC =  1.000 EPS    =  1.000
+ NBXMOD =      5 IONC   = 0.0000
+ There are        0 atom  pairs and        0 atom  exclusions.
+ There are        0 group pairs and        0 group exclusions.
+
+      ***** LEVEL  1 WARNING FROM <GTNBCT> *****
+      ***** CUTNB and CTOFNB are too close for efficient heuristic update.
+      ******************************************
+      BOMLEV (  0) IS NOT REACHED. WRNLEV IS  5
+
+ <MAKINB> with mode   5 found    236 exclusions and    184 interactions(1-4)
+ <MAKGRP> found    123 group exclusions.
+ Generating nonbond list with Exclusion mode = 5
+ == PRIMARY == SPACE FOR     4513 ATOM PAIRS AND        0 GROUP PAIRS
+
+ General atom nonbond list generation found:
+     1949 ATOM PAIRS WERE FOUND FOR ATOM LIST
+      155 GROUP PAIRS REQUIRED ATOM SEARCHES
+
+ENER ENR:  Eval#     ENERgy      Delta-E         GRMS
+ENER INTERN:          BONDs       ANGLes       UREY-b    DIHEdrals    IMPRopers
+ENER CROSS:           CMAPs     
+ ----------       ---------    ---------    ---------    ---------    ---------
+ENER>        0     66.19559      0.00000     22.13183
+ENER INTERN>       27.75298     30.39591      0.00000      5.16849      9.73077
+ENER CROSS>        -6.85256
+ ----------       ---------    ---------    ---------    ---------    ---------
+  
+ CHARMM>     
+  
+ CHARMM>    COOR FORCE COMP  ! copy forces to the comparison coordinates
+ SELECTED FORCES COPIED TO THE COMPARISON SET.
+
+  
+ CHARMM>    COOR DIST WEIGH COMP  ! put magnitudes in the weighting array.
+  
+ CHARMM>    PRINT COOR COMP
+
+          COORDINATE FILE MODULE
+ TITLE>  * SHORT EQUILIBRIUM SIMULATION OF THE CG STRUCTURE
+ TITLE>  *
+   96
+    1    1 AMN  CL    -9.44702   0.87550   2.15818 AAQA 1      9.72988
+    2    1 AMN  C     42.94786 -12.76860   6.57980 AAQA 1     45.28630
+    3    1 AMN  O    -33.90874  12.36582  -6.96076 AAQA 1     36.75824
+    4    2 ALA  N    -21.49214 -29.09584  -1.82513 AAQA 2     36.21893
+    5    2 ALA  H     -3.62329  -1.20170  -2.97786 AAQA 2      4.84149
+    6    2 ALA  CA    56.14195  42.95320  -5.99365 AAQA 2     70.94237
+    7    2 ALA  CB   -27.31576   2.38166  -0.67900 AAQA 2     27.42780
+    8    2 ALA  C    -18.68814 -21.48878  -7.29486 AAQA 2     29.39777
+    9    2 ALA  O      3.92327  10.50608  15.33059 AAQA 2     18.99465
+   10    3 ALA  N     32.82028 -22.07748  37.01282 AAQA 3     54.17135
+   11    3 ALA  H     -3.96236   1.36293   7.01480 AAQA 3      8.17100
+   12    3 ALA  CA   -19.47608  41.72989 -19.08373 AAQA 3     49.84868
+   13    3 ALA  CB    -9.18066   2.26418 -14.88566 AAQA 3     17.63502
+   14    3 ALA  C     12.35656 -51.29414 -16.34087 AAQA 3     55.23403
+   15    3 ALA  O     18.18765  10.78797  -0.65715 AAQA 3     21.15662
+   16    4 GLN  N    -36.57132  12.27347  10.28235 AAQA 4     39.92275
+   17    4 GLN  H     12.84021  -0.03170  -3.93801 AAQA 4     13.43056
+   18    4 GLN  CA    26.99492  25.94934  -3.89514 AAQA 4     37.64659
+   19    4 GLN  CB   -15.05140 -16.94473  -0.89837 AAQA 4     22.68205
+   20    4 GLN  C     -1.20967  -9.22693  31.99886 AAQA 4     33.32456
+   21    4 GLN  O      4.81992 -10.72615  -8.95663 AAQA 4     14.78185
+   22    5 ALA  N    -22.27323  37.76248 -10.23545 AAQA 5     45.02073
+   23    5 ALA  H     -2.34014  -2.19944  -4.77446 AAQA 5      5.75406
+   24    5 ALA  CA    20.79395 -37.22746  22.65461 AAQA 5     48.28564
+   25    5 ALA  CB   -13.15853  18.62890 -29.36501 AAQA 5     37.18180
+   26    5 ALA  C     45.04865 -12.31443   3.87509 AAQA 5     46.86194
+   27    5 ALA  O    -16.30418   3.75993   1.01369 AAQA 5     16.76279
+   28    6 ALA  N    -30.24626 -19.75268   5.27524 AAQA 6     36.50798
+   29    6 ALA  H     -3.52229  -1.11135   7.36695 AAQA 6      8.24097
+   30    6 ALA  CA    10.92950  31.26885   1.05536 AAQA 6     33.14074
+   31    6 ALA  CB     4.62731  -3.13029   2.08326 AAQA 6      5.96244
+   32    6 ALA  C      5.81279 -26.85233  -5.21645 AAQA 6     27.96512
+   33    6 ALA  O     13.05140  28.88074   3.74033 AAQA 6     31.91280
+   34    7 ALA  N     -5.85935  -5.69812  23.66947 AAQA 7     25.04086
+   35    7 ALA  H     11.70360   2.79837  -3.50131 AAQA 7     12.53253
+   36    7 ALA  CA     2.39276   0.25637 -12.33460 AAQA 7     12.56716
+   37    7 ALA  CB   -16.86482 -14.35490 -23.56524 AAQA 7     32.33892
+   38    7 ALA  C      6.20368  63.77801 -65.03117 AAQA 7     91.29717
+   39    7 ALA  O     11.38738 -37.45163  17.93661 AAQA 7     43.05832
+   40    8 ALA  N    -13.14014 -22.62100  43.26503 AAQA 8     50.55923
+   41    8 ALA  H      3.88925  -2.10884  -8.39355 AAQA 8      9.48816
+   42    8 ALA  CA    -0.15843  25.21285  -7.49239 AAQA 8     26.30302
+   43    8 ALA  CB   -27.84766 -17.48502  22.66469 AAQA 8     39.93628
+   44    8 ALA  C     -1.09927   5.74684  -3.31223 AAQA 8      6.72350
+   45    8 ALA  O    -14.53724   2.42959  -2.77877 AAQA 8     14.99852
+   46    9 GLN  N      7.29203 -17.15733   6.88670 AAQA 9     19.87396
+   47    9 GLN  H     -3.68449  -1.58017  -1.04693 AAQA 9      4.14348
+   48    9 GLN  CA    50.19507 -11.12116  17.66742 AAQA 9     54.36325
+   49    9 GLN  CB   -21.63286   7.74430 -14.67957 AAQA 9     27.26618
+   50    9 GLN  C    -15.56182 -31.01309   0.52789 AAQA 9     34.70245
+   51    9 GLN  O      8.65549   9.74550 -13.15568 AAQA 9     18.51929
+   52   10 ALA  N    -13.51541  75.31173  -7.26596 AAQA 10    76.85907
+   53   10 ALA  H      0.02626  -0.16428   6.35475 AAQA 10     6.35692
+   54   10 ALA  CA   -24.27504 -26.65637  14.40877 AAQA 10    38.82592
+   55   10 ALA  CB    16.04560  -3.58349 -14.97288 AAQA 10    22.23713
+   56   10 ALA  C     38.79350   5.30643   7.27817 AAQA 10    39.82544
+   57   10 ALA  O      3.51463   3.58976   2.95275 AAQA 10     5.82732
+   58   11 ALA  N     -9.28120  -8.69067 -13.54801 AAQA 11    18.58002
+   59   11 ALA  H    -10.64852  -0.88382   0.23780 AAQA 11    10.68778
+   60   11 ALA  CA   -11.85895 -12.20158  11.72953 AAQA 11    20.66628
+   61   11 ALA  CB    10.04662   9.45527  -3.71601 AAQA 11    14.28795
+   62   11 ALA  C    -22.64770  11.94776   4.68651 AAQA 11    26.03134
+   63   11 ALA  O     16.90752 -25.10126   0.86190 AAQA 11    30.27673
+   64   12 ALA  N     13.08065 -26.87935 -35.41108 AAQA 12    46.34164
+   65   12 ALA  H     -3.90958   1.85801   5.14026 AAQA 12     6.72007
+   66   12 ALA  CA     4.55478  62.37534  10.59840 AAQA 12    63.43308
+   67   12 ALA  CB    -5.29628 -19.50723  33.13388 AAQA 12    38.81284
+   68   12 ALA  C      3.80040 -27.24608 -27.69978 AAQA 12    39.03934
+   69   12 ALA  O    -26.33909  25.30821  19.89416 AAQA 12    41.59363
+   70   13 ALA  N    -24.68888 -54.07104   7.75777 AAQA 13    59.94498
+   71   13 ALA  H     -4.62087  -1.17813   6.97712 AAQA 13     8.45107
+   72   13 ALA  CA    64.79703  27.92759 -51.87559 AAQA 13    87.57673
+   73   13 ALA  CB   -27.41943  16.32100   1.64787 AAQA 13    31.95177
+   74   13 ALA  C      5.82507 -20.92375  27.74389 AAQA 13    35.23433
+   75   13 ALA  O     -0.07409   4.43493  -8.81166 AAQA 13     9.86506
+   76   14 GLN  N      4.84770  30.45640  26.55131 AAQA 14    40.69477
+   77   14 GLN  H      5.23869   1.42478   3.10692 AAQA 14     6.25514
+   78   14 GLN  CA    15.70831 -24.80587   1.62968 AAQA 14    29.40643
+   79   14 GLN  CB     1.29372  -4.96125 -14.41758 AAQA 14    15.30210
+   80   14 GLN  C    -64.02883  81.55812 -55.59435 AAQA 14   117.65267
+   81   14 GLN  O     27.94424 -50.21594  36.04222 AAQA 14    67.83482
+   82   15 ALA  N     38.85477 -23.90152   6.22976 AAQA 15    46.04113
+   83   15 ALA  H    -14.34243  -1.42136   3.56354 AAQA 15    14.84669
+   84   15 ALA  CA    -7.73833  46.96422  15.80059 AAQA 15    50.15156
+   85   15 ALA  CB    -1.60351 -17.04143   3.48029 AAQA 15    17.46694
+   86   15 ALA  C    -53.92286  -2.24754 -62.89892 AAQA 15    82.87943
+   87   15 ALA  O     14.81748   7.29589  22.50445 AAQA 15    27.91483
+   88   16 ALA  N     33.69117 -30.06781  35.89166 AAQA 16    57.68344
+   89   16 ALA  H      0.26394  -0.46403  -0.51866 AAQA 16     0.74431
+   90   16 ALA  CA     8.60291  26.64818 -17.66791 AAQA 16    33.11028
+   91   16 ALA  CB     3.86982  -2.02670   8.64727 AAQA 16     9.68805
+   92   16 ALA  C     17.81376  11.00796  15.60935 AAQA 16    26.11813
+   93   16 ALA  O    -24.15354 -21.86650  -9.59105 AAQA 16    33.96359
+   94   17 CBX  N     -2.40628 -21.02676 -30.71764 AAQA 17    37.30266
+   95   17 CBX  H     -3.57574   0.28010   6.21013 AAQA 17     7.17148
+   96   17 CBX  CA     1.14974  14.23456  17.24630 AAQA 17    22.39150
+  
+ CHARMM>     
+  
+ CHARMM>     
+  
+ CHARMM>    stop
+$$$$$$  New timer profile $$$$$
+   List time                       0.00 Other:            0.00
+         Electrostatic & VDW             0.00 Other:            0.00
+      Nonbond force                   0.00 Other:            0.00
+         Bond energy                     0.00 Other:            0.00
+         Angle energy                    0.00 Other:            0.00
+         Dihedral energy                 0.00 Other:            0.00
+         Restraints energy               0.00 Other:            0.00
+      INTRNL energy                   0.00 Other:            0.00
+   Energy time                     0.00 Other:            0.00
+ Total time                      0.04 Other:            0.04
+
+                    NORMAL TERMINATION BY NORMAL STOP
+                    MAXIMUM STACK SPACE USED IS   47520
+                    STACK CURRENTLY IN USE IS         0
+                    MOST SEVERE WARNING WAS AT LEVEL  1
+                    HEAP PRINTOUT-  HEAP SIZE  10240000
+                    SPACE CURRENTLY IN USE IS      9216
+                    MAXIMUM SPACE USED IS         19356
+                    FREE LIST
+            PRINHP> ADDRESS:         1 LENGTH:  10230244 NEXT:  10239461
+            PRINHP> ADDRESS:  10239461 LENGTH:       540 NEXT:         0
+
+                    $$$$$ JOB ACCOUNTING INFORMATION $$$$$
+                     ELAPSED TIME:     0.04  SECONDS 
+                         CPU TIME:     0.03  SECONDS 
